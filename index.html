@@ -169,12 +169,13 @@
       <p>Completa los datos y recibe opciones por WhatsApp.</p>
 
       <div class="form-box">
-        <input type="text" id="nombre" placeholder="Nombre">
-        <input type="text" id="destino" placeholder="Destino">
-        <input type="date" id="fecha">
-        <input type="number" id="personas" placeholder="Personas">
+        <input type="text" id="nombre" placeholder="¿Cual es tu nombre?">
+        <input type="text" id="destino" placeholder="¿A dónde quieres ir?">
+        <input type="date" id="fecha_entrada">
+	      <input type="date" id="fecha_salida">
+        <input type="number" id="personas" placeholder="¿Cuántas personas?">
 
-        <button class="btn" onclick="enviarWhatsApp()">Cotizar ahora</button>
+        <button class="btn" onclick="enviarWhatsApp()">Cotizar por WhatsApp →</button>
       </div>
 
     </div>
@@ -224,10 +225,11 @@
 function enviarWhatsApp() {
   let nombre = document.getElementById("nombre").value;
   let destino = document.getElementById("destino").value;
-  let fecha = document.getElementById("fecha").value;
+  let fecha_entrada = document.getElementById("fecha_entrada").value;
+  let fecha_salida = document.getElementById("fecha_salida").value;
   let personas = document.getElementById("personas").value;
 
-  let mensaje = `Hola, quiero cotizar un viaje:\nNombre: ${nombre}\nDestino: ${destino}\nFecha: ${fecha}\nPersonas: ${personas}`;
+  let mensaje = `Hola, quiero cotizar un viaje:\nNombre: ${nombre}\nDestino: ${destino}\nFecha Entrada: ${fecha_entrada}\nFecha Salida: ${fecha_salida}\nPersonas: ${personas}`;
 
   let url = "https://wa.me/18299868194?text=" + encodeURIComponent(mensaje);
 
